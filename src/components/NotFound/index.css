@@ -1,0 +1,19 @@
+/* Write your CSS here */
+.c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.h-pic {
+  text-align: center;
+}
+.n-head {
+  font-size: 20px;
+  font-family: 'Roboto';
+}
+.n-para {
+  font-size: 20px;
+  font-family: 'Roboto';
+  color: #dcdcdc;
+}
