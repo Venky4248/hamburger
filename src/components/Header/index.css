@@ -27,6 +27,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 190px;
+  list-style-type: none;
 }
 .hm-pic {
   height: 30px;
@@ -62,5 +63,7 @@
 .close-bt {
   background-color: transparent;
   border-width: 0px;
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
 }

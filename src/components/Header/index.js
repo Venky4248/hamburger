@@ -12,7 +12,7 @@ class Header extends Component {
 
   homeChange = () => {
     const {history} = this.props
-    history.replace('/')
+    history.push('/')
   }
 
   render() {
@@ -22,12 +22,19 @@ class Header extends Component {
           modal
           trigger={
             <div className="navbar">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/hamburger-menu-website-logo.png"
-                alt="website logo"
-                className="logo"
-              />
-              <button type="button" className="bt" onClick={this.clicked}>
+              <Link to="/">
+                <img
+                  src="https://assets.ccbp.in/frontend/react-js/hamburger-menu-website-logo.png"
+                  alt="website logo"
+                  className="logo"
+                />
+              </Link>
+              <button
+                type="button"
+                className="bt"
+                onClick={this.homeChange}
+                data-testid="hamburgerIconButton"
+              >
                 <GiHamburgerMenu className="ham" />
               </button>
             </div>
@@ -40,23 +47,32 @@ class Header extends Component {
                 type="button"
                 className="close-bt"
                 onClick={() => close()}
+                data-testid="closeButton"
               >
-                <IoMdClose className="close-icon" />
+                <IoMdClose className="close-icon" data-testid="closeButton" />
               </button>
-              <div className="ct">
-                <Link to="/" className="f" onClick={this.homeChange}>
-                  <div className="hm-container">
+              <ul className="ct">
+                <li>
+                  <Link
+                    to="/"
+                    className="f hm-container"
+                    onClick={() => close()}
+                  >
                     <AiFillHome className="hm-pic" />
                     <p className="h-h">Home</p>
-                  </div>
-                </Link>
-                <Link to="/about" className="f">
-                  <div className="hm-container">
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about"
+                    className="f hm-container"
+                    onClick={() => close()}
+                  >
                     <BsInfoCircleFill className="hm-pic" />
                     <p className="h-h">About</p>
-                  </div>
-                </Link>
-              </div>
+                  </Link>
+                </li>
+              </ul>
             </div>
           )}
         </Popup>
